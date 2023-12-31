@@ -18,12 +18,11 @@ LocalSearchX = 287
 LocalSearchY = 200
 LocalTransferAllX = 390
 LocalTransferAllY = 200
-;PixelColorX = 311
-;PixelColorY = 139
 LocalDropX = 435
 LocalDropY = 200
 CraftX = 1246
 CraftY = 281
+
 
 ;Display
 Gui, -resize +alwaysontop
@@ -62,6 +61,7 @@ Gui, font
 MagicFOption:=[]
 MagicFOption[1]:=New Flat_Round_Radio_Type_1(x := 5, y := 170, w := 54, Text:="Baby", Font:="Arial", FontSize:= "10 Bold", FontColor:="FFFFFF", Window:="1", Background_Color:="141414", HighLightColor:="A866E2", State:=0, GroupArray:=MagicFOption, Label:="MagicFMode")
 MagicFOption[2]:=New Flat_Round_Radio_Type_1(x += 60, y := 170, w := 82, Text:="Berry Farm", Font:="Arial", FontSize:= "10 Bold", FontColor:="FFFFFF", Window:="1", Background_Color:="141414", HighLightColor:="A866E2", State:=0, GroupArray:=MagicFOption, Label:="MagicFMode")
+
 
 ;Baby mode 
 Gui, font,bold
@@ -249,7 +249,6 @@ return
 
 ;Clicker + F
 F6::
-
 if(MagicF.State = 1)
 	{
 		MagicF.Switch_State()
@@ -369,139 +368,140 @@ if(cfToggle)
 
 
 ;Farm++
-if(cfarmToggle)
-{
-	Gui, Submit, NoHide
-	InventoryPixel()
-	if(Stone.State=0)
+	if(cfarmToggle)
 	{
-		sleep 500
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		Send {Click}
-		Send, stone
-		sleep 500
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		Send {Click}
-	}
-	if(Flint.State=0)
-	{
-		sleep 500
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		Send {Click}
-		Send, Flint
-		sleep 500
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		Send {Click}
-	}
-	if(Wood.State=0)
-	{
-		sleep 500
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		Send {Click}
-		Send, Wood
-		sleep 500
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		Send {Click}
-	}
-	if(Thach.State=0)
+		Gui, Submit, NoHide
+		InventoryPixel()
+		if(Stone.State=0)
 		{
-		sleep 500
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		Send {Click}
-		Send, Thach
-		sleep 500
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		Send {Click}
-	}
-	if(Rare.State=0)
-	{
-		sleep 500
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		Send {Click}
-		Send, Rare
-		sleep 500
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		Send {Click}
-	}
-	if(Seed.State=0)
-	{
-		sleep 500
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		Send {Click}
-		Send, Seed
-		sleep 500
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		Send {Click}
-	}
-	if(Berry.State=0)
-	{
-		sleep 500
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		Send {Click}
-		Send, Berry
-		sleep 500
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		Send {Click}
-	}
-	if(Oil.State=0)
-	{
-		sleep 500
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		Send {Click}
-		Send, Oil
-		sleep 500
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		Send {Click}
-	}
-	if(Crystal.State=0)
-	{
-		sleep 500
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		Send {Click}
-		Send, Crystal
-		sleep 500
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		Send {Click}
-	}
-	if(Metal.State=0)
-	{
-		sleep 500
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		Send {Click}
-		Send, Metal
-		sleep 500
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		Send {Click}
-	}
+			sleep 500
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			Send {Click}
+			Send, stone
+			sleep 500
+			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+			Send {Click}
+		}
+		if(Flint.State=0)
+		{
+			sleep 500
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			Send {Click}
+			Send, Flint
+			sleep 500
+			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+			Send {Click}
+		}
+		if(Wood.State=0)
+		{
+			sleep 500
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			Send {Click}
+			Send, Wood
+			sleep 500
+			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+			Send {Click}
+		}
+		if(Thach.State=0)
+			{
+			sleep 500
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			Send {Click}
+			Send, Thach
+			sleep 500
+			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+			Send {Click}
+		}
+		if(Rare.State=0)
+		{
+			sleep 500
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			Send {Click}
+			Send, Rare
+			sleep 500
+			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+			Send {Click}
+		}
+		if(Seed.State=0)
+		{
+			sleep 500
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			Send {Click}
+			Send, Seed
+			sleep 500
+			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+			Send {Click}
+		}
+		if(Berry.State=0)
+		{
+			sleep 500
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			Send {Click}
+			Send, Berry
+			sleep 500
+			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+			Send {Click}
+		}
+		if(Oil.State=0)
+		{
+			sleep 500
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			Send {Click}
+			Send, Oil
+			sleep 500
+			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+			Send {Click}
+		}
+		if(Crystal.State=0)
+		{
+			sleep 500
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			Send {Click}
+			Send, Crystal
+			sleep 500
+			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+			Send {Click}
+		}
+		if(Metal.State=0)
+		{
+			sleep 500
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			Send {Click}
+			Send, Metal
+			sleep 500
+			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+			Send {Click}
+		}
 
-	Send {Esc}
-}
+		Send {Esc}
+	}
 }
 
+;F Modes
 if(MagicFToggle)
 Gui, Submit, NoHide
-{
-	if(MagicFOption[1].State = 1)
+{	
+	if(MagicFOption[1].State = 1) ;Baby Mode
 	{
 		InventoryPixel()
 
@@ -542,7 +542,7 @@ Gui, Submit, NoHide
 		Send {Esc}
 	}
 	
-	if(MagicFOption[2].State = 1)
+	if(MagicFOption[2].State = 1) ;Berry Farm Mode
 	{
 		InventoryPixel()
 
