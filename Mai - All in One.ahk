@@ -162,10 +162,16 @@ Berry.HideSwitch()
 
 
 ;Gui
-Gui, Show, w275 h150,<GG Mai>
+Gui, Show, w275 h150,<GG Mai> All in One
 Gui, Color, 141414
 Gui, Submit, NoHide
 WinActivate, %ActiveWinID%
+
+
+;######################################################################################################################################
+;######################################################################################################################################
+;######################################################################################################################################
+;######################################################################################################################################
 
 
 ;Esp
@@ -629,6 +635,17 @@ Gui, Submit, NoHide
 			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
 			Send {Click}
 		}
+
+		sleep 500
+		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+		Send {Click}
+		Send, Seed
+		sleep 500
+		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+		Send {Click}
+
 		Send {Click}
 		Send {Esc}
 	}
@@ -638,13 +655,13 @@ return
 ;Autorun
 ~z::
 loop
-	{
-		ControlSend,, {w down}, ArkAscended
-		GetKeyState, state, w, P
-		if(state = U)
-			ControlSend,, {w up}, ArkAscended
-			break
-	}
+{
+	ControlSend,, {w down}, ArkAscended
+	GetKeyState, state, w, P
+	if(state = U)
+		ControlSend,, {w up}, ArkAscended
+		break
+}
 return
 
 
@@ -1117,8 +1134,6 @@ class Flat_Round_Radio_Type_1   {
         GuiControl, Show, % This.Hwnd
     }
 }
-
-
 
 
 ;######################################################################################################################################
