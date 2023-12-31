@@ -53,7 +53,7 @@ Gui, Add, Text, cbebebe x30 y50, Esp
 
 
 ;Magic F
-MagicF:= New Flat_Round_Switch_Type_1(x := 5 , y := 67 , w := 85 , Text := "Magic F" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="MagicF")
+MagicF:= New Flat_Round_Switch_Type_1(x := 5 , y := 67 , w := 110 , Text := "Magic F [F3]" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="MagicF")
 
 Gui, font,bold
 Gui, Add, Text, cbebebe x10 y150 vFMode, Choose the mode
@@ -190,6 +190,12 @@ else
 return
 
 
+;Magic F
+F3::
+MagicF.Switch_State()
+return
+
+
 ;Clicker
 F5::
 cToggle := !cToggle
@@ -236,6 +242,11 @@ return
 
 ;Clicker + F
 F6::
+if(MagicF.State = 1)
+	{
+		MagicF.Switch_State()
+	}
+
 cfToggle := !cfToggle
 loop
 	{
@@ -743,6 +754,10 @@ if(MagicFToggle)
 	if(Farm.State = 1)
 	{
 		Farm.Switch_State()
+	}
+	if(cfToggle = 1)
+	{
+		cfToggle := !cfToggle
 	}
 
 	Gui, Show, h210, <GG Mai> 
