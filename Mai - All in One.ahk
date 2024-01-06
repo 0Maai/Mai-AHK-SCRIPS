@@ -127,7 +127,7 @@ Farm:= New Flat_Round_Switch_Type_1(x := 128 , y := 110 , w := 120 , Text := "So
 
 
 ;Afk Gforce
-AfkMode:= New Flat_Round_Switch_Type_1(x := 178 , y := 7 , w := 100 , Text := "Afk Mode" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
+AfkMode:= New Flat_Round_Switch_Type_1(x := 178 , y := 7 , w := 100 , Text := "Afk Mode" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="AfkModeF")
 AfkMode.HideSwitch()
 
 
@@ -830,6 +830,31 @@ if(MagicFOption[2].State = 0)
 }
 return
 
+
+SetTimer, CheckWindow, 240000  ; 4 minutes = 240000 milliseconds
+return
+
+
+AfkModeF:
+Toggle := !Toggle  ; Toggle the script on/off with F2
+if (Toggle)
+    MsgBox, Afk Mode Enabled
+else
+    MsgBox, Afk Mode Disabled
+return
+
+CheckWindow:
+if (Toggle)
+{
+    WinGetPos, X, Y, Width, Height, GeForce NOW
+    if ErrorLevel = 0  ; Checks if the window was found
+    {
+        WinMove, GeForce NOW,, X, Y + 1
+        Sleep, 333
+        WinMove, GeForce NOW,, X, Y
+    }
+}
+return
 
 GuiClose:
 	ExitApp
