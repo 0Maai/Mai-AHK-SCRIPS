@@ -168,6 +168,21 @@ Gui, Submit, NoHide
 WinActivate, %ActiveWinID%
 
 
+;Pixel Color
+InventoryPixel()
+{
+    Loop
+    {
+        PixelGetColor, Color, 329, 163
+        Sleep, 50
+        if (Color = 0xFFFFFF)
+        {
+            break 
+        }
+    }
+}
+
+
 ;######################################################################################################################################
 ;######################################################################################################################################
 ;######################################################################################################################################
@@ -274,6 +289,8 @@ if(cfToggle)
 	{	
 	if(!cfarmToggle)
 		{
+			InventoryPixel()
+
 			sleep 500
 			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
 			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
@@ -362,6 +379,8 @@ if(cfToggle)
 if(cfarmToggle)
 {
 	Gui, Submit, NoHide
+	InventoryPixel()
+
 	if(Stone.State=1)
 	{
 		sleep 500
@@ -494,22 +513,29 @@ Gui, Submit, NoHide
 	{
 		if(BabyF[1].State = 1)
 		{
+			InventoryPixel()
 			sleep 500
 			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
 			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			Send {Click}
+			Send, Spoil
+			sleep 500
+			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+			Send {Click}
+			sleep 500
+			MouseMove, %LocalSearchX%, %LocalSearchY%, 1
+			MouseMove, %LocalSearchX%, %LocalSearchY%, 1
 			Send {Click}
 			Send, Raw
 			sleep 500
-			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
-			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
-			Send {Click}
-			sleep 500
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+			MouseMove, %LocalTransferAllX%, %LocalTransferAllY%, 1
+			MouseMove, %LocalTransferAllX%, %LocalTransferAllY%, 1
 			Send {Click}
 		}
 		if(BabyF[2].State = 1)
 		{
+			InventoryPixel()
 			sleep 500
 			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
 			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
@@ -526,6 +552,8 @@ Gui, Submit, NoHide
 	
 	if(MagicFOption[2].State = 1)
 	{
+		InventoryPixel()
+
 		if(Mejoberry.State = 0)
 		{
 			sleep 500
