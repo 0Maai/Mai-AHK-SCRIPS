@@ -151,7 +151,7 @@ AfkMode.HideSwitch()
 
 ;Farm++
 Gui, font,bold
-Gui, Add, Text, cbebebe x10 y150 vFarmPlus, Choose what you want to throw away
+Gui, Add, Text, cbebebe x10 y150 vFarmPlus, Choose what you want to keep
 Gui, font
 Metal:= New Flat_Round_Switch_Type_1(x := 5 , y := 170 , w := 75 , Text := "Metal" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
 Obsidian:= New Flat_Round_Switch_Type_1(x := 5 , y += 20 , w := 90 , Text := "Obsidian" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
@@ -399,7 +399,7 @@ if(cfarmToggle)
 	Gui, Submit, NoHide
 	InventoryPixel()
 
-	if(Stone.State=1)
+	if(Stone.State=0)
 	{
 		sleep 500
 		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
@@ -411,7 +411,7 @@ if(cfarmToggle)
 		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
 		Send {Click}
 	}
-	if(Flint.State=1)
+	if(Flint.State=0)
 	{
 		sleep 500
 		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
@@ -423,7 +423,7 @@ if(cfarmToggle)
 		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
 		Send {Click}
 	}
-	if(Wood.State=1)
+	if(Wood.State=0)
 	{
 		sleep 500
 		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
@@ -435,7 +435,7 @@ if(cfarmToggle)
 		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
 		Send {Click}
 	}
-	if(Thatch.State=1)
+	if(Thatch.State=0)
 		{
 		sleep 500
 		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
@@ -447,7 +447,7 @@ if(cfarmToggle)
 		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
 		Send {Click}
 	}
-	if(Rare.State=1)
+	if(Rare.State=0)
 	{
 		sleep 500
 		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
@@ -459,7 +459,7 @@ if(cfarmToggle)
 		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
 		Send {Click}
 	}
-	if(Seed.State=1)
+	if(Seed.State=0)
 	{
 		sleep 500
 		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
@@ -471,7 +471,7 @@ if(cfarmToggle)
 		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
 		Send {Click}
 	}
-	if(Berry.State=1)
+	if(Berry.State=0)
 	{
 		sleep 500
 		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
@@ -483,7 +483,7 @@ if(cfarmToggle)
 		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
 		Send {Click}
 	}
-	if(Oil.State=1)
+	if(Oil.State=0)
 	{
 		sleep 500
 		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
@@ -495,7 +495,7 @@ if(cfarmToggle)
 		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
 		Send {Click}
 	}
-	if(Crystal.State=1)
+	if(Crystal.State=0)
 	{
 		sleep 500
 		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
@@ -507,7 +507,7 @@ if(cfarmToggle)
 		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
 		Send {Click}
 	}
-	if(Metal.State=1)
+	if(Metal.State=0)
 	{
 		sleep 500
 		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
