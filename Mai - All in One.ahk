@@ -876,10 +876,6 @@ if(MagicFToggle)
 
 if(!MagicFToggle)
 {
-	Gui, show, h150, <GG Mai>
-	GuiControl, Move, Version, y135
-	GuiControl, Hide, FMode
-	
 	MagicFOption[1].State_0()
 	MagicFOption[2].State_0()
 	MagicFOption[3].State_0()
@@ -887,6 +883,10 @@ if(!MagicFToggle)
 	MagicFOption[1].HideSwitch()
 	MagicFOption[2].HideSwitch()
 	MagicFOption[3].HideSwitch()
+
+	Gui, show, h150, <GG Mai>
+	GuiControl, Move, Version, y135
+	GuiControl, Hide, FMode
 }
 return
 
