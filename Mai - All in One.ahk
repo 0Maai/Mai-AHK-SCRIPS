@@ -29,7 +29,7 @@ CraftY = 281
 Gui, -resize +alwaysontop
 Gui, +LastFound
 Gui, show, x0 y0, <Mai>
-Gui, Add, Text, cbebebe x244 y135 vVersion, v3.5.3
+Gui, Add, Text, cbebebe x244 y135 vVersion, v3.5.4
 Gui, font,bold
 Gui, font
 
@@ -62,6 +62,7 @@ Gui, font
 MagicFOption:=[]
 MagicFOption[1]:=New Flat_Round_Radio_Type_1(x := 5, y := 170, w := 54, Text:="Baby", Font:="Arial", FontSize:= "10 Bold", FontColor:="FFFFFF", Window:="1", Background_Color:="141414", HighLightColor:="A866E2", State:=0, GroupArray:=MagicFOption, Label:="MagicFMode")
 MagicFOption[2]:=New Flat_Round_Radio_Type_1(x += 60, y := 170, w := 54, Text:="Berry", Font:="Arial", FontSize:= "10 Bold", FontColor:="FFFFFF", Window:="1", Background_Color:="141414", HighLightColor:="A866E2", State:=0, GroupArray:=MagicFOption, Label:="MagicFMode")
+MagicFOption[3]:=New Flat_Round_Radio_Type_1(x += 60, y := 170, w := 54, Text:="Meat", Font:="Arial", FontSize:= "10 Bold", FontColor:="FFFFFF", Window:="1", Background_Color:="141414", HighLightColor:="A866E2", State:=0, GroupArray:=MagicFOption, Label:="MagicFMode")
 
 ;Baby mode 
 Gui, font,bold
@@ -87,9 +88,20 @@ Verdberry:= New Flat_Round_Switch_Type_1(x, y += 20 , w := 100 , Text := "Verdbe
 Fiber:= New Flat_Round_Switch_Type_1(x, y += 20 , w := 100 , Text := "Fiber" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
 
 
+;Meat mode
+Gui, font,bold
+Gui, Add, Text, cbebebe x10 y200 vMeatMode, Choose what you want to keep
+Gui, font
+Meat:= New Flat_Round_Switch_Type_1(x := 5 , y := 220 , w := 100 , Text := "Meat" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
+Prime:= New Flat_Round_Switch_Type_1(x, y += 20 , w := 104 , Text := "Prime" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
+Fish:= New Flat_Round_Switch_Type_1(x := 110, y := 220 , w := 100 , Text := "Fish" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
+Hide:= New Flat_Round_Switch_Type_1(x, y += 20 , w := 100 , Text := "Hide" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
+
+
 GuiControl, Hide, FMode
 MagicFOption[1].HideSwitch()
 MagicFOption[2].HideSwitch()
+MagicFOption[3].HideSwitch()
 
 GuiControl, Hide, FBabyMode
 BabyF[1].HideSwitch()
@@ -106,6 +118,12 @@ Cianberry.HideSwitch()
 Magenberry.HideSwitch()
 Verdberry.HideSwitch()
 Fiber.HideSwitch()
+
+GuiControl, Hide, MeatMode
+Meat.HideSwitch()
+Prime.HideSwitch()
+Fish.HideSwitch()
+Hide.HideSwitch()
 
 
 ;Autoclicker
@@ -688,6 +706,66 @@ Gui, Submit, NoHide
 		Send {Click}
 		Send {Esc}
 	}
+
+	if(MagicFOption[3].State = 1)
+	{
+		if(Prime.State = 1)
+		{
+			sleep 500
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			Send {Click}
+			Send, Prime
+			sleep 500
+			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
+			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
+			Send {Click}
+		}
+
+		if(Fish.State = 1)
+		{
+			sleep 500
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			Send {Click}
+			Send, Fish
+			sleep 500
+			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
+			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
+			Send {Click}
+		}
+
+		if(Hide.State = 1)
+		{
+			sleep 500
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			Send {Click}
+			Send, Hide
+			sleep 500
+			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
+			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
+			Send {Click}
+		}
+
+		if(Meat.State = 1)
+		{
+			sleep 500
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			Send {Click}
+			Send, Meat
+			sleep 500
+			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
+			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
+			Send {Click}
+		}
+
+		sleep 500
+		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+		Send {Click}
+	}
 }
 return
 
@@ -793,6 +871,7 @@ if(MagicFToggle)
 	GuiControl, Show, FMode	
 	MagicFOption[1].ShowSwitch()
 	MagicFOption[2].ShowSwitch()
+	MagicFOption[3].ShowSwitch()
 }
 
 if(!MagicFToggle)
@@ -803,9 +882,11 @@ if(!MagicFToggle)
 	
 	MagicFOption[1].State_0()
 	MagicFOption[2].State_0()
+	MagicFOption[3].State_0()
 
 	MagicFOption[1].HideSwitch()
 	MagicFOption[2].HideSwitch()
+	MagicFOption[3].HideSwitch()
 }
 return
 
@@ -855,6 +936,24 @@ if(MagicFOption[2].State = 0)
 	Magenberry.HideSwitch()
 	Verdberry.HideSwitch()
 	Fiber.HideSwitch()
+}
+if(MagicFOption[3].State = 1)
+{
+	Gui, Show, h280, <GG Mai> 
+	GuiControl, Move, Version, y265
+	GuiControl, Show, MeatMode
+	Meat.ShowSwitch()
+	Prime.ShowSwitch()
+	Fish.ShowSwitch()
+	Hide.ShowSwitch()
+}
+if(MagicFOption[3].State = 0)
+{
+	GuiControl, Hide, MeatMode
+	Meat.HideSwitch()
+	Prime.HideSwitch()
+	Fish.HideSwitch()
+	Hide.HideSwitch()
 }
 return
 
