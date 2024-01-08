@@ -29,7 +29,7 @@ CraftY = 281
 Gui, -resize +alwaysontop
 Gui, +LastFound
 Gui, show, x0 y0, <Mai>
-Gui, Add, Text, cbebebe x244 y135 vVersion, v3.5.7
+Gui, Add, Text, cbebebe x244 y135 vVersion, v3.5.6
 Gui, font,bold
 Gui, font
 
