@@ -29,7 +29,7 @@ CraftY = 281
 Gui, -resize +alwaysontop
 Gui, +LastFound
 Gui, show, x0 y0, <Mai>
-Gui, Add, Text, cbebebe x244 y135 vVersion, v3.5.4
+Gui, Add, Text, cbebebe x244 y135 vVersion, v3.5.6
 Gui, font,bold
 Gui, font
 
@@ -532,21 +532,16 @@ Gui, Submit, NoHide
 		if(BabyF[1].State = 1)
 		{
 			InventoryPixel()
-			sleep 750
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			Send {Click}
-			Send, Spoil
 			sleep 500
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
+			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
 			Send {Click}
-			sleep 500
+			sleep 250
 			MouseMove, %LocalSearchX%, %LocalSearchY%, 1
 			MouseMove, %LocalSearchX%, %LocalSearchY%, 1
 			Send {Click}
 			Send, Raw
-			sleep 500
+			sleep 250
 			MouseMove, %LocalTransferAllX%, %LocalTransferAllY%, 1
 			MouseMove, %LocalTransferAllX%, %LocalTransferAllY%, 1
 			Send {Click}
@@ -719,6 +714,19 @@ Gui, Submit, NoHide
 			sleep 500
 			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
 			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
+			Send {Click}
+		}
+
+		if(Prime.State = 0)
+		{
+			sleep 500
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			Send {Click}
+			Send, Prime
+			sleep 500
+			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
 			Send {Click}
 		}
 
