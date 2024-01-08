@@ -29,7 +29,7 @@ CraftY = 281
 Gui, -resize +alwaysontop
 Gui, +LastFound
 Gui, show, x0 y0, <Mai>
-Gui, Add, Text, cbebebe x244 y135 vVersion, v3.5.7
+Gui, Add, Text, cbebebe x244 y135 vVersion, v3.5.8
 Gui, font,bold
 Gui, font
 
@@ -533,6 +533,11 @@ Gui, Submit, NoHide
 		{
 			InventoryPixel()
 			sleep 500
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			Send {Click}
+			Send, Spoil
+			sleep 250
 			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
 			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
 			Send {Click}
