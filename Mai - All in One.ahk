@@ -24,8 +24,8 @@ LocalDropX = 435
 LocalDropY = 200
 CraftX = 1246
 CraftY = 281
-LDelay = SDelay
-SDelay = SDelay
+LDelay = 400
+SDelay = 200
 
 ;Display
 Gui, -resize +alwaysontop
