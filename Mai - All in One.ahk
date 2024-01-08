@@ -773,6 +773,7 @@ Gui, Submit, NoHide
 		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
 		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
 		Send {Click}
+		Send {Esc}
 	}
 }
 return
