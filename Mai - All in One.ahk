@@ -750,6 +750,19 @@ Gui, Submit, NoHide
 			Send {Click}
 		}
 
+		if(Fish.State = 0)
+		{
+			sleep LDelay
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			Send {Click}
+			Send, Fish
+			sleep SDelay
+			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+			Send {Click}
+		}
+
 		if(Fish.State = 1)
 		{
 			sleep SDelay
