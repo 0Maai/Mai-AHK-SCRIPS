@@ -25,13 +25,13 @@ LocalDropY = 200
 CraftX = 1246
 CraftY = 281
 LDelay = 300
-SDelay = 120
+SDelay = 150
 
 ;Display
 Gui, -resize +alwaysontop
 Gui, +LastFound
 Gui, show, x0 y0, <Mai>
-Gui, Add, Text, cbebebe x244 y135 vVersion, v3.5.9
+Gui, Add, Text, cbebebe x238 y135 vVersion, v3.5.10
 Gui, font,bold
 Gui, font
 
@@ -567,13 +567,13 @@ Gui, Submit, NoHide
 		{
 			InventoryPixel()
 			sleep LDelay
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			MouseMove, %LocalSearchX%, %LocalSearchY%, 1
+			MouseMove, %LocalSearchX%, %LocalSearchY%, 1
 			Send {Click}
 			Send, Mejo
 			sleep SDelay
-			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
-			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
+			MouseMove, %LocalTransferAllX%, %LocalTransferAllY%, 1
+			MouseMove, %LocalTransferAllX%, %LocalTransferAllY%, 1
 			Send {Click}
 		}
 
@@ -584,128 +584,7 @@ Gui, Submit, NoHide
 	{
 		InventoryPixel()
 
-		if(Mejoberry.State = 0)
-		{
-			sleep LDelay
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			Send {Click}
-			Send, Mejo
-			sleep SDelay
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			Send {Click}
-		}
-		if(Narcoberry.State = 0)
-		{
-			sleep SDelay
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			Send {Click}
-			Send, Narco
-			sleep SDelay
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			Send {Click}
-		}
-		if(Stimberry.State = 0)
-		{
-			sleep SDelay
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			Send {Click}
-			Send, Stim
-			sleep SDelay
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			Send {Click}
-		}
-		if(Tintoberry.State = 0)
-		{
-			sleep SDelay
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			Send {Click}
-			Send, Tinto
-			sleep SDelay
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			Send {Click}
-		}
-		if(Azulberry.State = 0)
-		{
-			sleep SDelay
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			Send {Click}
-			Send, Azul
-			sleep SDelay
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			Send {Click}
-		}
-		if(Amarberry.State = 0)
-		{
-			sleep SDelay
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			Send {Click}
-			Send, Amar
-			sleep SDelay
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			Send {Click}
-		}
-		if(Cianberry.State = 0)
-		{
-			sleep SDelay
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			Send {Click}
-			Send, Cian
-			sleep SDelay
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			Send {Click}
-		}
-		if(Magenberry.State = 0)
-		{
-			sleep SDelay
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			Send {Click}
-			Send, Magen
-			sleep SDelay
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			Send {Click}
-		}
-		if(Verdberry.State = 0)
-		{
-			sleep SDelay
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			Send {Click}
-			Send, Verd
-			sleep SDelay
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			Send {Click}
-		}
-		if(Fiber.State = 0)
-		{
-			sleep SDelay
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			Send {Click}
-			Send, Fiber
-			sleep SDelay
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			Send {Click}
-		}
-
-		sleep SDelay
+		sleep LDelay
 		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
 		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
 		Send {Click}
@@ -715,6 +594,130 @@ Gui, Submit, NoHide
 		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
 		Send {Click}
 
+		if(Mejoberry.State = 1)
+		{
+			sleep LDelay
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			Send {Click}
+			Send, Mejo
+			sleep SDelay
+			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
+			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
+			Send {Click}
+		}
+		if(Narcoberry.State = 1)
+		{
+			sleep SDelay
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			Send {Click}
+			Send, Narco
+			sleep SDelay
+			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
+			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
+			Send {Click}
+		}
+		if(Stimberry.State = 1)
+		{
+			sleep SDelay
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			Send {Click}
+			Send, Stim
+			sleep SDelay
+			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
+			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
+			Send {Click}
+		}
+		if(Tintoberry.State = 1)
+		{
+			sleep SDelay
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			Send {Click}
+			Send, Tinto
+			sleep SDelay
+			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
+			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
+			Send {Click}
+		}
+		if(Azulberry.State = 1)
+		{
+			sleep SDelay
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			Send {Click}
+			Send, Azul
+			sleep SDelay
+			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
+			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
+			Send {Click}
+		}
+		if(Amarberry.State = 1)
+		{
+			sleep SDelay
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			Send {Click}
+			Send, Amar
+			sleep SDelay
+			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
+			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
+			Send {Click}
+		}
+		if(Cianberry.State = 1)
+		{
+			sleep SDelay
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			Send {Click}
+			Send, Cian
+			sleep SDelay
+			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
+			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
+			Send {Click}
+		}
+		if(Magenberry.State = 1)
+		{
+			sleep SDelay
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			Send {Click}
+			Send, Magen
+			sleep SDelay
+			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
+			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
+			Send {Click}
+		}
+		if(Verdberry.State = 1)
+		{
+			sleep SDelay
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			Send {Click}
+			Send, Verd
+			sleep SDelay
+			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
+			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
+			Send {Click}
+		}
+		if(Fiber.State = 1)
+		{
+			sleep SDelay
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+			Send {Click}
+			Send, Fiber
+			sleep SDelay
+			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
+			MouseMove, %RemoteTransferAllX%, %RemoteTransferAllY%, 1
+			Send {Click}
+		}
+
+		sleep SDelay
+		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
 		Send {Click}
 		Send {Esc}
 	}
