@@ -25,7 +25,7 @@ LocalDropY = 200
 CraftX = 1246
 CraftY = 281
 LDelay = 300
-SDelay = 100
+SDelay = 120
 
 ;Display
 Gui, -resize +alwaysontop
@@ -411,6 +411,7 @@ if(cfarmToggle)
 		sleep SDelay
 		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
 		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+		sleep SDelay
 		Send {Click}
 	}
 	if(Flint.State=0)
@@ -423,6 +424,7 @@ if(cfarmToggle)
 		sleep SDelay
 		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
 		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+		sleep SDelay
 		Send {Click}
 	}
 	if(Wood.State=0)
@@ -435,6 +437,7 @@ if(cfarmToggle)
 		sleep SDelay
 		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
 		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+		sleep SDelay
 		Send {Click}
 	}
 	if(Thatch.State=0)
@@ -447,6 +450,7 @@ if(cfarmToggle)
 		sleep SDelay
 		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
 		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+		sleep SDelay
 		Send {Click}
 	}
 	if(Rare.State=0)
@@ -459,6 +463,7 @@ if(cfarmToggle)
 		sleep SDelay
 		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
 		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+		sleep SDelay
 		Send {Click}
 	}
 	if(Seed.State=0)
@@ -471,6 +476,7 @@ if(cfarmToggle)
 		sleep SDelay
 		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
 		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+		sleep SDelay
 		Send {Click}
 	}
 	if(Berry.State=0)
@@ -483,6 +489,7 @@ if(cfarmToggle)
 		sleep SDelay
 		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
 		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+		sleep SDelay
 		Send {Click}
 	}
 	if(Oil.State=0)
@@ -495,6 +502,7 @@ if(cfarmToggle)
 		sleep SDelay
 		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
 		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+		sleep SDelay
 		Send {Click}
 	}
 	if(Crystal.State=0)
@@ -507,6 +515,7 @@ if(cfarmToggle)
 		sleep SDelay
 		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
 		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+		sleep SDelay
 		Send {Click}
 	}
 	if(Metal.State=0)
@@ -519,6 +528,7 @@ if(cfarmToggle)
 		sleep SDelay
 		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
 		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+		sleep SDelay
 		Send {Click}
 	}
 
