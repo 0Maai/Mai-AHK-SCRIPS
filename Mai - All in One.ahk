@@ -18,20 +18,18 @@ LocalSearchX = 287
 LocalSearchY = 200
 LocalTransferAllX = 390
 LocalTransferAllY = 200
-;PixelColorX = 311
-;PixelColorY = 139
 LocalDropX = 435
 LocalDropY = 200
 CraftX = 1246
 CraftY = 281
 LDelay = 300
-SDelay = 150
+SDelay = 120
 
 ;Display
-Gui, -resize +alwaysontop
+Gui, -resize ;+alwaysontop
 Gui, +LastFound
 Gui, show, x0 y0, <Mai>
-Gui, Add, Text, cbebebe x238 y135 vVersion, v3.5.10
+Gui, Add, Text, cbebebe x238 y135 vVersion, v3.5.11
 Gui, font,bold
 Gui, font
 
@@ -537,8 +535,8 @@ if(cfarmToggle)
 }
 
 if(MagicFToggle)
-Gui, Submit, NoHide
 {
+	Gui, Submit, NoHide
 	if(MagicFOption[1].State = 1)
 	{
 		if(BabyF[1].State = 1)
@@ -914,13 +912,50 @@ if(MagicFToggle)
 	MagicFOption[1].ShowSwitch()
 	MagicFOption[2].ShowSwitch()
 	MagicFOption[3].ShowSwitch()
+
+	if(MagicFOption[1].State = 1)
+	{
+		Gui, Show, h260, <GG Mai> 
+		GuiControl, Move, Version, y245
+		GuiControl, Show, FBabyMode
+		BabyF[1].ShowSwitch()
+		BabyF[2].ShowSwitch()
+	}
+
+	if(MagicFOption[2].State = 1)
+	{
+		Gui, Show, h340, <GG Mai> 
+		GuiControl, Move, Version, y325
+		GuiControl, Show, BerryMode
+		Mejoberry.ShowSwitch()
+		Narcoberry.ShowSwitch()
+		Stimberry.ShowSwitch()
+		Tintoberry.ShowSwitch()
+		Azulberry.ShowSwitch()
+		Amarberry.ShowSwitch()
+		Cianberry.ShowSwitch()
+		Magenberry.ShowSwitch()
+		Verdberry.ShowSwitch()
+		Fiber.ShowSwitch()
+	}
+
+	if(MagicFOption[3].State = 1)
+	{
+		Gui, Show, h280, <GG Mai> 
+		GuiControl, Move, Version, y265
+		GuiControl, Show, MeatMode
+		Meat.ShowSwitch()
+		Prime.ShowSwitch()
+		Fish.ShowSwitch()
+		Hide.ShowSwitch()
+	}
 }
 
 if(!MagicFToggle)
 {
-	MagicFOption[1].State_0()
-	MagicFOption[2].State_0()
-	MagicFOption[3].State_0()
+	;MagicFOption[1].State_0()
+	;MagicFOption[2].State_0()
+	;MagicFOption[3].State_0()
 
 	MagicFOption[1].HideSwitch()
 	MagicFOption[2].HideSwitch()
