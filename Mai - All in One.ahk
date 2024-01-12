@@ -1,6 +1,8 @@
 ﻿#SingleInstance, Force
 #MaxThreadsPerHotkey 2
 SetKeyDelay, -1
+#Persistent
+SetTitleMatchMode, 2 
 
 GDIP_Startup()
 
