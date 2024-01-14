@@ -1037,10 +1037,6 @@ if(MagicFOption[3].State = 0)
 return
 
 
-SetTimer, CheckWindow, 240000  ; 4 minutes = 240000 milliseconds
-return
-
-
 AfkModeF:
 Toggle := !Toggle  ; Toggle the script on/off with F2
 if (Toggle)
@@ -1048,6 +1044,10 @@ if (Toggle)
 else
     MsgBox, Afk Mode Disabled
 return
+
+SetTimer, CheckWindow, 240000  ; 4 minutes = 240000 milliseconds
+return
+
 
 CheckWindow:
 if (Toggle)
