@@ -31,7 +31,7 @@ SDelay = 120
 Gui, -resize ;+alwaysontop
 Gui, +LastFound
 Gui, show, x0 y0, <Mai>
-Gui, Add, Text, cbebebe x238 y135 vVersion, v3.5.12
+Gui, Add, Text, cbebebe x238 y135 vVersion, v3.6.1
 Gui, font,bold
 Gui, font
 
@@ -136,7 +136,7 @@ Gui, Add, Text, cbebebe x30 y90 , Simple Autoclicker
 Autoclicker:=[]
 Autoclicker[1]:=New Flat_Round_Radio_Type_1(x:=128,y:=87,w:=48,Text:="Left",Font:="Arial",FontSize:= "10 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",HighLightColor:="A866E2",State:=1,GroupArray:=Autoclicker)
 Autoclicker[2]:=New Flat_Round_Radio_Type_1(x:=178,y:=87,w:=54,Text:="Right",Font:="Arial",FontSize:= "10 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",HighLightColor:="A866E2",State:=0,GroupArray:=Autoclicker)
-Autoclicker[3]:=New Flat_Round_Radio_Type_1(x:=235,y:=87,w:=54,Text:="F",Font:="Arial",FontSize:= "10 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",HighLightColor:="A866E2",State:=0,GroupArray:=Autoclicker)
+Autoclicker[3]:=New Flat_Round_Radio_Type_1(x:=235,y:=87,w:=54,Text:="C",Font:="Arial",FontSize:= "10 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",HighLightColor:="A866E2",State:=0,GroupArray:=Autoclicker)
 
 
 ;Autoclicker + Sort
@@ -254,6 +254,12 @@ loop
 					Send {Click Right}
 					Send {Click Right}
 					}
+				if(Autoclicker[3].State=1)
+					{
+					Sleep SDelay
+					Send, c
+					Send, c
+					}
 				}
 			else
 				{
@@ -272,11 +278,9 @@ loop
 				if(Autoclicker[3].State=1)
 					{
 					Sleep SDelay
-					Send, c
-					Send, c
+					ControlSend,, c, ArkAscended
+					ControlSend,, c, ArkAscended
 					}
-	          
-	            
 				}
 	}
 return
