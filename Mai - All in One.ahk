@@ -25,7 +25,7 @@ LocalDropY = 200
 CraftX = 1246
 CraftY = 281
 LDelay = 300
-SDelay = 120
+SDelay = 100
 
 ;Display
 Gui, -resize ;+alwaysontop
@@ -217,11 +217,11 @@ espToggle := !espToggle
 Send, {%Console%}
 if espToggle
 	{
-	    Send, wp.Runtime.OverrideRuntimeSpatialHashLoadingRange -range= {Enter}
+	    Send, r.SetNearClipPlane 1000 {Enter}
 	}
 else
 	{
-	    Send, wp.Runtime.OverrideRuntimeSpatialHashLoadingRange -range=50000 {Enter}
+	    Send, r.SetNearClipPlane 1 {Enter}
 	}
 return
 
@@ -576,7 +576,7 @@ if(MagicFToggle)
 		}
 		if(BabyF[2].State = 1)
 		{
-			InventoryPixel()
+						InventoryPixel()
 			sleep LDelay
 			MouseMove, %LocalSearchX%, %LocalSearchY%, 1
 			MouseMove, %LocalSearchX%, %LocalSearchY%, 1
