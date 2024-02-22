@@ -10,28 +10,28 @@ GDIP_Startup()
 Console = F1
 
 ;Screen Resolution
-RemoteSearchX = 1250
-RemoteSearchY = 200
-RemoteDropX = 1460
-RemoteDropY = 200
-RemoteTransferAllX = 1410
-RemoteTransferAllY = 200
-LocalSearchX = 287
-LocalSearchY = 200
-LocalTransferAllX = 390
-LocalTransferAllY = 200
-LocalDropX = 435
-LocalDropY = 200
-CraftX = 1246
-CraftY = 281
-LDelay = 300
-SDelay = 100
+Global RemoteSearchX = 1250
+Global RemoteSearchY = 200
+Global RemoteDropX = 1460
+Global RemoteDropY = 200
+Global RemoteTransferAllX = 1410
+Global RemoteTransferAllY = 200
+Global LocalSearchX = 287
+Global LocalSearchY = 200
+Global LocalTransferAllX = 390
+Global LocalTransferAllY = 200
+Global LocalDropX = 435
+Global LocalDropY = 200
+Global CraftX = 1246
+Global CraftY = 281
+Global LDelay = 300
+Global SDelay = 100
 
 ;Display
 Gui, -resize ;+alwaysontop
 Gui, +LastFound
 Gui, show, x0 y0, <Mai>
-Gui, Add, Text, cbebebe x238 y135 vVersion, v3.6.6
+Gui, Add, Text, cbebebe x238 y135 vVersion, v3.7.0
 Gui, font,bold
 Gui, font
 
@@ -139,33 +139,34 @@ Autoclicker[2]:=New Flat_Round_Radio_Type_1(x:=178,y:=87,w:=54,Text:="Right",Fon
 Autoclicker[3]:=New Flat_Round_Radio_Type_1(x:=235,y:=87,w:=54,Text:="C",Font:="Arial",FontSize:= "10 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",HighLightColor:="A866E2",State:=0,GroupArray:=Autoclicker)
 
 
-;Autoclicker + Sort
+;Farming
 Gui, font,bold
 Gui, Add, Text, cWhite x10 y110, F6
 Gui, font
-Gui, Add, Text, cbebebe x30 y110, Autocliker + Sort
-Farm:= New Flat_Round_Switch_Type_1(x := 128 , y := 110 , w := 120 , Text := "Sort Options" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="FarmPlus")
+Gui, Add, Text, cbebebe x30 y110, Farming
+Farm:= New Flat_Round_Switch_Type_1(x := 75 , y := 110 , w := 62 , Text := "Sort" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="FarmPlus")
+FarmBot:= New Flat_Round_Switch_Type_1(x := 140 , y := 110 , w := 60 , Text := "Bot" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
 
 
-;Afk Gforce
-AfkMode:= New Flat_Round_Switch_Type_1(x := 178 , y := 7 , w := 100 , Text := "Afk Mode" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="AfkModeF")
-AfkMode.HideSwitch()
+;Afk Gforce;
+;AfkMode:= New Flat_Round_Switch_Type_1(x := 178 , y := 7 , w := 100 , Text := "Afk Mode" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=;0,Label:="AfkModeF")
+;AfkMode.HideSwitch()
 
 
 ;Farm++
 Gui, font,bold
 Gui, Add, Text, cbebebe x10 y150 vFarmPlus, Choose what you want to keep
 Gui, font
-Metal:= New Flat_Round_Switch_Type_1(x := 5 , y := 170 , w := 75 , Text := "Metal" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
-Obsidian:= New Flat_Round_Switch_Type_1(x := 5 , y += 20 , w := 90 , Text := "Obsidian" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
-Flint:= New Flat_Round_Switch_Type_1(x := 5 , y += 20 , w := 75 , Text := "Flint" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
-Stone:= New Flat_Round_Switch_Type_1(x := 5 , y += 20 , w := 75 , Text := "Stone" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
-Crystal:= New Flat_Round_Switch_Type_1(x := 5 , y += 20 , w := 85 , Text := "Crystal" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
-Wood:= New Flat_Round_Switch_Type_1(x := 110 , y := 170 , w := 75 , Text := "Wood" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
-Thatch:= New Flat_Round_Switch_Type_1(x := 110 , y += 20 , w := 78 , Text := "Thatch" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
-Rare:= New Flat_Round_Switch_Type_1(x := 110 , y += 20 , w := 75 , Text := "Rare" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
-Seed:= New Flat_Round_Switch_Type_1(x := 110 , y += 20 , w := 75 , Text := "Seed" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
-Oil:= New Flat_Round_Switch_Type_1(x := 110 , y += 20 , w := 75 , Text := "Oil" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
+Global Metal:= New Flat_Round_Switch_Type_1(x := 5 , y := 170 , w := 75 , Text := "Metal" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
+Global Obsidian:= New Flat_Round_Switch_Type_1(x := 5 , y += 20 , w := 90 , Text := "Obsidian" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
+Global Flint:= New Flat_Round_Switch_Type_1(x := 5 , y += 20 , w := 75 , Text := "Flint" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
+Global Stone:= New Flat_Round_Switch_Type_1(x := 5 , y += 20 , w := 75 , Text := "Stone" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
+Global Crystal:= New Flat_Round_Switch_Type_1(x := 5 , y += 20 , w := 85 , Text := "Crystal" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
+Global Wood:= New Flat_Round_Switch_Type_1(x := 110 , y := 170 , w := 75 , Text := "Wood" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
+Global Thatch:= New Flat_Round_Switch_Type_1(x := 110 , y += 20 , w := 78 , Text := "Thatch" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
+Global Rare:= New Flat_Round_Switch_Type_1(x := 110 , y += 20 , w := 75 , Text := "Rare" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
+Global Seed:= New Flat_Round_Switch_Type_1(x := 110 , y += 20 , w := 75 , Text := "Seed" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
+Global Oil:= New Flat_Round_Switch_Type_1(x := 110 , y += 20 , w := 75 , Text := "Oil" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
 ;Berry:= New Flat_Round_Switch_Type_1(x := 110 , y += 20 , w := 75 , Text := "Berry" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
 
 GuiControl, Hide, FarmPlus	
@@ -201,6 +202,233 @@ InventoryPixel()
             break 
         }
     }
+}
+
+;Sort
+Sort()
+{
+	sleep LDelay
+	MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+	MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+	Send {Click}
+	Send {Click}
+	Send, sto
+	sleep SDelay
+	MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+	MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+	Send {Click}
+
+	sleep LDelay
+	MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+	MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+	Send {Click}
+	Send {Click}
+	Send, obsi
+	sleep SDelay
+	MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+	MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+	Send {Click}
+
+	sleep LDelay
+	MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+	MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+	Send {Click}
+	Send {Click}
+	Send, flint
+	sleep SDelay
+	MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+	MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+	Send {Click}
+
+	sleep SDelay
+	MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+	MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+	Send {Click}
+	Send {Click}
+	Send, w
+	sleep SDelay
+	MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+	MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+	Send {Click}
+
+	sleep SDelay
+	MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+	MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+	Send {Click}
+	Send {Click}
+	Send, h
+	sleep SDelay
+	MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+	MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+	Send {Click}
+
+	sleep SDelay
+	MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+	MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+	Send {Click}
+	Send {Click}
+	Send, rare
+	sleep SDelay
+	MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+	MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+	Send {Click}
+
+	sleep SDelay
+	MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+	MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+	Send {Click}
+	Send {Click}
+	Send, crys
+	sleep SDelay
+	MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+	MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+	Send {Click}
+
+	sleep SDelay
+	MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+	MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+	Send {Click}
+	Send {Click}
+	Send, oil
+	sleep SDelay
+	MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+	MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+	Send {Click}
+
+	Send {Esc}
+}
+
+;Sort++
+SortC()
+{
+	if(Stone.State=0)
+	{
+		sleep LDelay
+		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+		Send {Click}
+		Send {Click}
+		Send, stone
+		sleep SDelay
+		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+		sleep SDelay
+		Send {Click}
+	}
+	if(Flint.State=0)
+	{
+		sleep SDelay
+		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+		Send {Click}
+		Send {Click}
+		Send, Flint
+		sleep SDelay
+		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+		sleep SDelay
+		Send {Click}
+	}
+	if(Wood.State=0)
+	{
+		sleep SDelay
+		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+		Send {Click}
+		Send {Click}
+		Send, Wood
+		sleep SDelay
+		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+		sleep SDelay
+		Send {Click}
+	}
+	if(Thatch.State=0)
+		{
+		sleep SDelay
+		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+		Send {Click}
+		Send {Click}
+		Send, Thatch
+		sleep SDelay
+		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+		sleep SDelay
+		Send {Click}
+	}
+	if(Rare.State=0)
+	{
+		sleep SDelay
+		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+		Send {Click}
+		Send {Click}
+		Send, Rare
+		sleep SDelay
+		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+		sleep SDelay
+		Send {Click}
+	}
+	if(Seed.State=0)
+	{
+		sleep SDelay
+		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+		Send {Click}
+		Send {Click}
+		Send, Seed
+		sleep SDelay
+		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+		sleep SDelay
+		Send {Click}
+	}
+	if(Oil.State=0)
+	{
+		sleep SDelay
+		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+		Send {Click}
+		Send {Click}
+		Send, Oil
+		sleep SDelay
+		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+		sleep SDelay
+		Send {Click}
+	}
+	if(Crystal.State=0)
+	{
+		sleep SDelay
+		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+		Send {Click}
+		Send {Click}
+		Send, Crystal
+		sleep SDelay
+		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+		sleep SDelay
+		Send {Click}
+	}
+	if(Metal.State=0)
+	{
+		sleep SDelay
+		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+		Send {Click}
+		Send {Click}
+		Send, Metal
+		sleep SDelay
+		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+		sleep SDelay
+		Send {Click}
+	}
+
+	Send {Esc}
 }
 
 
@@ -286,7 +514,7 @@ loop
 return
 
 
-;Clicker + F
+;Farming
 F6::
 if(MagicF.State = 1)
 	{
@@ -298,253 +526,85 @@ loop
 	{
 	    If not cfToggle
 	        break
-			if(GForce.State=1)
+
+			if(FarmBot.State = 1)
+			{
+				loop 40
 				{
-				Sleep SDelay
-				Send {Click}
-				Send {Click}
+					if(GForce.State = 1)
+					{
+					Sleep SDelay
+					Send {Click}
+					Send {Click}
+					}
+					else
+					{
+					Sleep SDelay
+					ControlClick, x0 y0, ArkAscended,, %Button%,,
+					ControlClick, x0 y0, ArkAscended,, %Button%,,
+					}
+
+					If not cfToggle
+						break
 				}
+
+				if(cfToggle)
+				{	
+				Send {f}
+				;Farm
+					if(!cfarmToggle)
+						{
+							InventoryPixel()
+							Sort()
+						}
+				
+				;Farm++
+					if(cfarmToggle)
+					{
+						Gui, Submit, NoHide
+						InventoryPixel()
+						SortC()
+					}
+				
+				}
+			}
 			else
+			{
+				if(GForce.State=1)
+				{
+				Sleep SDelay
+				Send {Click}
+				Send {Click}
+				}
+				else
 				{
 				Sleep SDelay
 				ControlClick, x0 y0, ArkAscended,, %Button%,,
 				ControlClick, x0 y0, ArkAscended,, %Button%,,
 				}
+			}
 	}
 return
 
 
 ~f::
-;Farm
 if(cfToggle)
-	{	
+{	
+;Farm
 	if(!cfarmToggle)
 		{
 			InventoryPixel()
-
-			sleep LDelay
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			Send {Click}
-			Send, sto
-			sleep SDelay
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			Send {Click}
-			
-			;sleep SDelay
-			;MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			;MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			;Send {Click}
-			;Send, berr
-			;sleep SDelay
-			;MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			;MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			;Send {Click}
-
-			sleep SDelay
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			Send {Click}
-			Send, w
-			sleep SDelay
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			Send {Click}
-
-			sleep SDelay
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			Send {Click}
-			Send, h
-			sleep SDelay
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			Send {Click}
-
-			sleep SDelay
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			Send {Click}
-			Send, rare
-			sleep SDelay
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			Send {Click}
-
-			sleep SDelay
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			Send {Click}
-			Send, crys
-			sleep SDelay
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			Send {Click}
-
-			;sleep SDelay
-			;MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			;MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			;Send {Click}
-			;Send, seed
-			;sleep SDelay
-			;MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			;MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			;Send {Click}
-
-			sleep SDelay
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-			Send {Click}
-			Send, oil
-			sleep SDelay
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-			Send {Click}
-
-			Send {Esc}
+			Sort()
 		}
 
-
 ;Farm++
-if(cfarmToggle)
-{
-	Gui, Submit, NoHide
-	InventoryPixel()
-
-	if(Stone.State=0)
+	if(cfarmToggle)
 	{
-		sleep LDelay
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		Send {Click}
-		Send, stone
-		sleep SDelay
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		sleep SDelay
-		Send {Click}
-	}
-	if(Flint.State=0)
-	{
-		sleep SDelay
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		Send {Click}
-		Send, Flint
-		sleep SDelay
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		sleep SDelay
-		Send {Click}
-	}
-	if(Wood.State=0)
-	{
-		sleep SDelay
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		Send {Click}
-		Send, Wood
-		sleep SDelay
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		sleep SDelay
-		Send {Click}
-	}
-	if(Thatch.State=0)
-		{
-		sleep SDelay
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		Send {Click}
-		Send, Thatch
-		sleep SDelay
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		sleep SDelay
-		Send {Click}
-	}
-	if(Rare.State=0)
-	{
-		sleep SDelay
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		Send {Click}
-		Send, Rare
-		sleep SDelay
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		sleep SDelay
-		Send {Click}
-	}
-	if(Seed.State=0)
-	{
-		sleep SDelay
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		Send {Click}
-		Send, Seed
-		sleep SDelay
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		sleep SDelay
-		Send {Click}
-	}
-	;if(Berry.State=0)
-	;{
-	;	sleep SDelay
-	;	MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-	;	MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-	;	Send {Click}
-	;	Send, Berry
-	;	sleep SDelay
-	;	MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-	;	MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-	;	sleep SDelay
-	;	Send {Click}
-	;}
-	if(Oil.State=0)
-	{
-		sleep SDelay
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		Send {Click}
-		Send, Oil
-		sleep SDelay
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		sleep SDelay
-		Send {Click}
-	}
-	if(Crystal.State=0)
-	{
-		sleep SDelay
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		Send {Click}
-		Send, Crystal
-		sleep SDelay
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		sleep SDelay
-		Send {Click}
-	}
-	if(Metal.State=0)
-	{
-		sleep SDelay
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
-		Send {Click}
-		Send, Metal
-		sleep SDelay
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
-		sleep SDelay
-		Send {Click}
+		Gui, Submit, NoHide
+		InventoryPixel()
+		SortC()
 	}
 
-	Send {Esc}
-}
 }
 
 if(MagicFToggle)
@@ -1053,30 +1113,30 @@ if(MagicFOption[3].State = 0)
 return
 
 
-AfkModeF:
-Toggle := !Toggle  ; Toggle the script on/off with F2
-if (Toggle)
-    MsgBox, Afk Mode Enabled
-else
-    MsgBox, Afk Mode Disabled
-return
-
-SetTimer, CheckWindow, 240000  ; 4 minutes = 240000 milliseconds
-return
-
-
-CheckWindow:
-if (Toggle)
-{
-    WinGetPos, X, Y, Width, Height, GeForce NOW
-    if ErrorLevel = 0  ; Checks if the window was found
-    {
-        WinMove, GeForce NOW,, X, Y + 1
-        Sleep, 333
-        WinMove, GeForce NOW,, X, Y
-    }
-}
-return
+;AfkModeF:
+;Toggle := !Toggle  ; Toggle the script on/off with F2
+;if (Toggle)
+;    MsgBox, Afk Mode Enabled
+;else
+;    MsgBox, Afk Mode Disabled
+;return
+;
+;SetTimer, CheckWindow, 240000  ; 4 minutes = 240000 milliseconds
+;return
+;
+;
+;CheckWindow:
+;if (Toggle)
+;{
+;    WinGetPos, X, Y, Width, Height, GeForce NOW
+;    if ErrorLevel = 0  ; Checks if the window was found
+;    {
+;        WinMove, GeForce NOW,, X, Y + 1
+;        Sleep, 333
+;        WinMove, GeForce NOW,, X, Y
+;    }
+;}
+;return
 
 GuiClose:
 	ExitApp
