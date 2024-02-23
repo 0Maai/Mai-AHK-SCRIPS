@@ -560,13 +560,13 @@ loop
 					{
 						if(GForce.State = 1)
 						{
-						Sleep 700
+						Sleep 600
 						Send {Click}
 						Send {Click}
 						}
 						else
 						{
-						Sleep 700
+						Sleep 600
 						ControlClick, x0 y0, ArkAscended,, %Button%,,
 						ControlClick, x0 y0, ArkAscended,, %Button%,,
 						}
