@@ -31,7 +31,7 @@ Global SDelay = 100
 Gui, -resize ;+alwaysontop
 Gui, +LastFound
 Gui, show, x0 y0, <Mai>
-Gui, Add, Text, cbebebe x238 y135 vVersion, v3.7.0
+Gui, Add, Text, cbebebe x238 y135 vVersion, v3.7.3
 Gui, font,bold
 Gui, font
 
@@ -592,8 +592,11 @@ loop
 							InventoryPixel()
 							SortC()
 						}
-					
+						If not cfToggle
+							break
 					}
+					If not cfToggle
+						break
 				}
 
 				Sleep LDelay
