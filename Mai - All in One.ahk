@@ -162,12 +162,12 @@ Global Obsidian:= New Flat_Round_Switch_Type_1(x := 5 , y += 20 , w := 90 , Text
 Global Flint:= New Flat_Round_Switch_Type_1(x := 5 , y += 20 , w := 75 , Text := "Flint" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
 Global Stone:= New Flat_Round_Switch_Type_1(x := 5 , y += 20 , w := 75 , Text := "Stone" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
 Global Crystal:= New Flat_Round_Switch_Type_1(x := 5 , y += 20 , w := 85 , Text := "Crystal" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
+Global Berry:= New Flat_Round_Switch_Type_1(x := 5 , y += 20 , w := 75 , Text := "Berry" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
 Global Wood:= New Flat_Round_Switch_Type_1(x := 110 , y := 170 , w := 75 , Text := "Wood" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
 Global Thatch:= New Flat_Round_Switch_Type_1(x := 110 , y += 20 , w := 78 , Text := "Thatch" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
 Global Rare:= New Flat_Round_Switch_Type_1(x := 110 , y += 20 , w := 75 , Text := "Rare" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
 Global Seed:= New Flat_Round_Switch_Type_1(x := 110 , y += 20 , w := 75 , Text := "Seed" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
 Global Oil:= New Flat_Round_Switch_Type_1(x := 110 , y += 20 , w := 75 , Text := "Oil" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
-;Berry:= New Flat_Round_Switch_Type_1(x := 110 , y += 20 , w := 75 , Text := "Berry" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="")
 
 GuiControl, Hide, FarmPlus	
 Metal.HideSwitch()
@@ -180,7 +180,7 @@ Wood.HideSwitch()
 Thatch.HideSwitch()
 Rare.HideSwitch()
 Seed.HideSwitch()
-;Berry.HideSwitch()
+Berry.HideSwitch()
 
 
 ;Gui
@@ -213,6 +213,17 @@ Sort()
 	Send {Click}
 	Send {Click}
 	Send, sto
+	sleep SDelay
+	MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+	MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+	Send {Click}
+
+	sleep LDelay
+	MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+	MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+	Send {Click}
+	Send {Click}
+	Send, berry
 	sleep SDelay
 	MouseMove, %RemoteDropX%, %RemoteDropY%, 1
 	MouseMove, %RemoteDropX%, %RemoteDropY%, 1
@@ -308,7 +319,7 @@ SortC()
 		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
 		Send {Click}
 		Send {Click}
-		Send, stone
+		Send, Stone
 		sleep SDelay
 		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
 		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
@@ -427,6 +438,20 @@ SortC()
 		sleep SDelay
 		Send {Click}
 	}
+	if(Berry.State=0)
+	{
+		sleep LDelay
+		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+		MouseMove, %RemoteSearchX%, %RemoteSearchY%, 1
+		Send {Click}
+		Send {Click}
+		Send, Berry
+		sleep SDelay
+		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+		MouseMove, %RemoteDropX%, %RemoteDropY%, 1
+		sleep SDelay
+		Send {Click}
+	}
 
 	Send {Esc}
 }
@@ -529,44 +554,57 @@ loop
 
 			if(FarmBot.State = 1)
 			{
-				loop 40
+				loop 200
 				{
-					if(GForce.State = 1)
+					loop 40
 					{
-					Sleep SDelay
-					Send {Click}
-					Send {Click}
-					}
-					else
-					{
-					Sleep SDelay
-					ControlClick, x0 y0, ArkAscended,, %Button%,,
-					ControlClick, x0 y0, ArkAscended,, %Button%,,
+						if(GForce.State = 1)
+						{
+						Sleep 900
+						Send {Click}
+						Send {Click}
+						}
+						else
+						{
+						Sleep 900
+						ControlClick, x0 y0, ArkAscended,, %Button%,,
+						ControlClick, x0 y0, ArkAscended,, %Button%,,
+						}
+
+						If not cfToggle
+							break
 					}
 
-					If not cfToggle
-						break
-				}
-
-				if(cfToggle)
-				{	
-				Send {f}
-				;Farm
-					if(!cfarmToggle)
+					if(cfToggle)
+					{	
+					Send {f}
+					;Farm
+						if(!cfarmToggle)
 						{
 							InventoryPixel()
 							Sort()
 						}
-				
-				;Farm++
-					if(cfarmToggle)
-					{
-						Gui, Submit, NoHide
-						InventoryPixel()
-						SortC()
+					
+					;Farm++
+						if(cfarmToggle)
+						{
+							Gui, Submit, NoHide
+							InventoryPixel()
+							SortC()
+						}
+					
 					}
-				
 				}
+
+				Sleep LDelay
+				Send {1}
+
+				Sleep SDelay
+				Send {2}
+
+				Sleep SDelay
+				Send {3}
+				
 			}
 			else
 			{
@@ -592,10 +630,10 @@ if(cfToggle)
 {	
 ;Farm
 	if(!cfarmToggle)
-		{
-			InventoryPixel()
-			Sort()
-		}
+	{
+		InventoryPixel()
+		Sort()
+	}
 
 ;Farm++
 	if(cfarmToggle)
@@ -922,7 +960,7 @@ if(cfarmToggle)
 	Thatch.ShowSwitch()
 	Rare.ShowSwitch()
 	Seed.ShowSwitch()
-	;Berry.ShowSwitch()
+	Berry.ShowSwitch()
 }
 if(!cfarmToggle)
 {
@@ -939,7 +977,7 @@ if(!cfarmToggle)
 	Thatch.HideSwitch()
 	Rare.HideSwitch()
 	Seed.HideSwitch()
-	;Berry.HideSwitch()
+	Berry.HideSwitch()
 }
 return
 
