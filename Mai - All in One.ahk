@@ -554,19 +554,19 @@ loop
 
 			if(FarmBot.State = 1)
 			{
-				loop 200
+				loop 50
 				{
 					loop 40
 					{
 						if(GForce.State = 1)
 						{
-						Sleep 900
+						Sleep 700
 						Send {Click}
 						Send {Click}
 						}
 						else
 						{
-						Sleep 900
+						Sleep 700
 						ControlClick, x0 y0, ArkAscended,, %Button%,,
 						ControlClick, x0 y0, ArkAscended,, %Button%,,
 						}
