@@ -470,11 +470,11 @@ espToggle := !espToggle
 Send, {%Console%}
 if espToggle
 	{
-	    Send, r.SetNearClipPlane 1000 {Enter}
+	    Send, r.Nanite.ProxyRenderMode -1 | r.Nanite 0 | r.SkyAtmosphere 0 {Enter}
 	}
 else
 	{
-	    Send, r.SetNearClipPlane 1 {Enter}
+	    Send,  r.Nanite.ProxyRenderMode -1 | r.Nanite 1 | r.SkyAtmosphere 0 {Enter}
 	}
 return
 
