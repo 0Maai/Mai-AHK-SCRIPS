@@ -467,14 +467,18 @@ SortC()
 F2:: 
 espToggle := !espToggle
 
-Send, {%Console%}
 if espToggle
 	{
-	    Send, r.Nanite.ProxyRenderMode -1 | r.Nanite 0 | r.SkyAtmosphere 0 {Enter}
+		Send, {%Console%}
+	    Send, r.Nanite.ProxyRenderMode -1 | r.Nanite 0 {Enter}
 	}
 else
 	{
-	    Send,  r.Nanite.ProxyRenderMode -1 | r.Nanite 1 | r.SkyAtmosphere 0 {Enter}
+		Send, {%Console%}
+	    Send,  r.Nanite 1 {Enter}
+
+		Send, {%Console%}
+		Send,  r.Nanite.ProxyRenderMode 0 {Enter}
 	}
 return
 
