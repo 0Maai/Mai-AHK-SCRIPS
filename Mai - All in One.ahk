@@ -12,15 +12,15 @@ Console = F1
 ;Screen Resolution
 Global RemoteSearchX = 1250
 Global RemoteSearchY = 200
-Global RemoteDropX = 1460
+Global RemoteDropX = 1425
 Global RemoteDropY = 200
-Global RemoteTransferAllX = 1410
+Global RemoteTransferAllX = 1376
 Global RemoteTransferAllY = 200
 Global LocalSearchX = 287
 Global LocalSearchY = 200
-Global LocalTransferAllX = 390
+Global LocalTransferAllX = 355
 Global LocalTransferAllY = 200
-Global LocalDropX = 435
+Global LocalDropX = 402
 Global LocalDropY = 200
 Global CraftX = 1246
 Global CraftY = 281
@@ -55,7 +55,7 @@ Gui, Add, Text, cbebebe x30 y50, Esp
 
 
 ;Magic F
-MagicF:= New Flat_Round_Switch_Type_1(x := 5 , y := 67 , w := 110 , Text := "Magic F [F3]" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="MagicF")
+MagicF:= New Flat_Round_Switch_Type_1(x := 5 , y := 67 , w := 110 , Text := "Magic F   F4" ,Font:="Arial",FontSize:= "12 Bold" , FontColor:="FFFFFF" ,Window:="1",Background_Color:="141414",State:=0,Label:="MagicF")
 
 Gui, font,bold
 Gui, Add, Text, cbebebe x10 y150 vFMode, Choose the mode
@@ -484,7 +484,7 @@ return
 
 
 ;Magic F
-F3::
+F4::
 MagicF.Switch_State()
 return
 
